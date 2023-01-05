@@ -26,7 +26,6 @@ ENV PYTHONUNBUFFERED 1
 
 # Copy executable/manifest to Gear
 COPY manifest.json ${FLYWHEEL}/manifest.json
-COPY utils ${FLYWHEEL}/utils
 COPY run.py ${FLYWHEEL}/run.py
 
 # Configure entrypoint
