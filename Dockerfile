@@ -1,4 +1,4 @@
-FROM nipreps/fmriprep:20.2.7
+FROM xiaoqianxiao/test:latest
 
 LABEL maintainer="xiaoqian@stanford.edu"
 
