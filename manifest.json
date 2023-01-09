@@ -55,7 +55,6 @@
         "FLYWHEEL": "/flywheel/v0",
         "PWD": "/flywheel/v0"
     },
-    },
     "label": "RestingfMRI_Denoise",
     "license": "",
     "maintainer": "Xiaoqian <xiaoqian@stanford.edu>",
