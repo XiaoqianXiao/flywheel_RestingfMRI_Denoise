@@ -142,6 +142,30 @@ def main(gtk_context):
     command = generate_command(
         config, work_dir, output_analysis_id_dir, errors, warnings
     )
+    
+    # zip entire output/<analysis_id> folder into
+    #  <gear_name>_<project|subject|session label>_<analysis.id>.zip
+    zip_file_name = gear_name + f"_{run_label}_{destination_id}.zip"
+    zip_output(
+        str(output_dir),
+        destination_id,
+        zip_file_name,
+        dry_run=False,
+        exclude_files=None,
+    )
+    
+    # clean up: remove output that was zipped
+    if Path(output_analysis_id_dir).exists():
+        if not config.get("gear-keep-output"):
+
+            log.debug('removing output directory "%s"', str(output_analysis_id_dir))
+            shutil.rmtree(output_analysis_id_dir)
+
+        else:
+            log.info('NOT removing output directory "%s"', str(output_analysis_id_dir))
+
+    else:
+        log.info("Output directory does not exist so it cannot be removed")
 
 
 if __name__ == "__main__":
