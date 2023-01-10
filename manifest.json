@@ -18,40 +18,26 @@
         }
     },                                          
     "config": {
-        "gear-keep-output": {
-            "default": false,
-            "description": "Don't delete output.  Output is always zipped into a single file for easy download.  Choose this option to prevent output deletion after zipping.",
-            "type": "boolean"
+        "highpass_cutoff": {
+            "description": "High pass filter value.",
+            "default": 0.008,
+            "type": "integer"
         },
-        "gear-log-level": {
-            "default": "INFO",
-            "description": "Gear Log verbosity level (INFO|DEBUG)",
-            "enum": [
-                "INFO",
-                "DEBUG"
-            ],
-            "type": "string"
-        },
-        "gear-log-to-file": {
-            "default": false,
-            "description": "Instead of logging in real time, save log output of fMRIPrep to the file output/log#.txt (where # is 1 or 2 depending on how many times fMRIPrep was run.",
-            "type": "boolean"
-        },
-        "gear-save-intermediate-output": {
-            "default": false,
-            "description": "Gear will save ALL intermediate output into fmriprep_work_*.zip",
-            "type": "boolean"
+       "lowpass_cutoff": {
+            "description": "Low pass filter value.",
+            "default": 0.08,
+            "type": "integer"
         },
         "gear-writable-dir": {
             "default": "/var/tmp",
             "description": "Gears expect to be able to write temporary files in /flywheel/v0/.  If this location is not writable (such as when running in Singularity), this path will be used instead.  fMRIPrep creates a large number of files so this disk space should be fast and local.",
             "type": "string"
-        },       
-        "task-id": {
+        }, 
+        "task": {
             "default": "",
             "description": "select a specific task to be processed",
             "type": "string"
-        },
+        }
     },
     "custom": {
         "docker-image": "xiaoqianxiao/test:latest",
