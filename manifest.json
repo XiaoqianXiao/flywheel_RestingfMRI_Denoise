@@ -1,6 +1,22 @@
 {
     "author": "Xiaoqian Xiao",
     "command": "poetry run python run.py",
+     "inputs": {
+        "fmriprep_dir": {
+            "description": "fmriprep output files. Path do preprocessed BIDS dataset",
+            "base": "file",
+            "type": {
+                "enum": [
+                        "archive"
+                        ]
+            }
+        },
+        "pipelines": {
+            "description": "Name of pipelines used for denoising, can be both file of json files with pipeline or file with name of pipelines from package",
+            "base": "file",
+            "optional": true
+        }
+    },                                          
     "config": {
         "gear-keep-output": {
             "default": false,
