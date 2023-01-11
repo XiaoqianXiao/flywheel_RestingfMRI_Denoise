@@ -15,8 +15,6 @@ from flywheel_gear_toolkit.interfaces.command_line import (
     exec_command,
 )
 from flywheel_gear_toolkit.utils.zip_tools import unzip_archive, zip_output
-from utils.fly.environment import get_and_log_environment
-from utils.singularity import run_in_tmp_dir
 
 log = logging.getLogger(__name__)
 
@@ -46,7 +44,7 @@ def generate_command(config, work_dir, output_analysis_id_dir, errors, warnings)
         BIDS_APP,
         os.path.join(work_dir, "bids"),
         str(output_analysis_id_dir),
-        ANALYSIS_LEVEL,
+        ANALYSIS_LEVEL
     ]
 
     # 3 positional args: bids path, output dir, 'participant'
