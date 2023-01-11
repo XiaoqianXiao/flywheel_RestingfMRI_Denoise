@@ -28,11 +28,6 @@
             "default": 0.08,
             "type": "integer"
         },
-        "gear-writable-dir": {
-            "default": "/var/tmp",
-            "description": "Gears expect to be able to write temporary files in /flywheel/v0/.  If this location is not writable (such as when running in Singularity), this path will be used instead.  fMRIPrep creates a large number of files so this disk space should be fast and local.",
-            "type": "string"
-        }, 
         "task": {
             "default": "",
             "description": "select a specific task to be processed",
