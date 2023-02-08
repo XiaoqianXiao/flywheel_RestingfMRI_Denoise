@@ -7,7 +7,7 @@
             "base": "file",
             "optional": true
         },
-      "api-key"": {
+      "api-key": {
           "base": "api-key"
         }
     },                                          
