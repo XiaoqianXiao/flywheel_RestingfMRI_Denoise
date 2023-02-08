@@ -50,6 +50,11 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
     # (which start with "gear-") and singularity commands.
     skip_pattern = re.compile("gear-|lsf-|singularity-")
     command_parameters = {}
+    ##
+    pipelines_file_path = gtk_context.get_input_path("pipelines")
+    if pipelines_file_path:
+        paths = list(Path("input/pipelines").glob("*"))
+        command_parameters['pipelines'] = paths[0]
     log_to_file = False
     for key, val in config.items():
         # these arguments are passed directly to the command as is
@@ -120,7 +125,7 @@ def main(gtk_context):
         )
     else:
         Path(output_analysis_id_dir).mkdir()
- 
+            
     command = generate_command(
         config, work_dir, output_analysis_id_dir, errors, warnings
     )
