@@ -14,6 +14,6 @@ A example of json file with pipeline is here:
 ### api-key:
 This will allow the gear to use the flywheel SDK using your api key, giving the gear all the same access permissions that your account has.
 Please refer the flywheel document for more info about the api-key.
-\https://flywheel-io.gitlab.io/product/backend/sdk/branches/master/python/getting_started.html#api-key
+<br />https://flywheel-io.gitlab.io/product/backend/sdk/branches/master/python/getting_started.html#api-key
 
 ## Config:
