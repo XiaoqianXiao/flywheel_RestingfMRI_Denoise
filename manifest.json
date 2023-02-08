@@ -6,6 +6,9 @@
             "description": "Name of pipelines used for denoising, can be both file of json files with pipeline or file with name of pipelines from package",
             "base": "file",
             "optional": true
+        },
+      "api-key"": {
+          "base": "api-key"
         }
     },                                          
     "custom": {
