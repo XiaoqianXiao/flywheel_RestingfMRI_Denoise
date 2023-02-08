@@ -26,7 +26,7 @@ BIDS_APP = "RestingfMRI_Denoising"
 # What level to run at (positional_argument #3)
 ANALYSIS_LEVEL = "project"
 
-def generate_command(config, work_dir, output_analysis_id_dir, errors, warnings):
+def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, errors, warnings):
     """Build the main command line command to run.
     Args:
         config (GearToolkitContext.config): run-time options from config.json
@@ -37,7 +37,6 @@ def generate_command(config, work_dir, output_analysis_id_dir, errors, warnings)
     Returns:
         cmd (list of str): command to execute
     """
-
     # start with the command itself:
     # 3 positional args: bids path, output dir, ANALYSIS_LEVEL
     # This should be done here in case there are nargs='*' arguments
@@ -45,7 +44,6 @@ def generate_command(config, work_dir, output_analysis_id_dir, errors, warnings)
     cmd = [
         BIDS_APP,
         os.path.join(work_dir, "bids"),
-        str(output_analysis_id_dir),
     ]
 
     # get parameters to pass to the command by skipping gear config parameters
@@ -137,7 +135,7 @@ def main(gtk_context):
         # un-zip fmriprep output and re-orgernize.
         import os, zipfile
         import re
-        fmripep_dir = os.path.join(output_dir,'fmriprep')
+        fmripep_dir = os.path.join(work_dir, "bids")
         zipFile_dir = os.path.join(fmripep_dir, 'zip_files')
         unzipFile_dir = os.path.join(fmripep_dir, 'unzipped_files')  
         extension = ".zip"
