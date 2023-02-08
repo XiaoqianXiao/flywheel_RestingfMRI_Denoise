@@ -8,18 +8,6 @@
             "optional": true
         }
     },                                          
-    "config": {
-        "high-pass": {
-            "description": "High pass filter value.",
-            "default": 0.008,
-            "type": "integer"
-        },
-       "low-pass": {
-            "description": "Low pass filter value.",
-            "default": 0.08,
-            "type": "integer"
-        }
-    },
     "custom": {
         "docker-image": "xiaoqianxiao/test:latest",
         "flywheel": {
