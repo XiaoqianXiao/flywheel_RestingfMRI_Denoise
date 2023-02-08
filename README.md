@@ -13,7 +13,8 @@ You can find a list of pipelines already set in the package here:
 A example of json file with pipeline is here:
 ### api-key:
 This will allow the gear to use the flywheel SDK using your api key, giving the gear all the same access permissions that your account has.
-Please refer the flywheel document for more info about the api-key.
-<br />https://flywheel-io.gitlab.io/product/backend/sdk/branches/master/python/getting_started.html#api-key
+Please refer the flywheel document(https://flywheel-io.gitlab.io/product/backend/sdk/branches/master/python/getting_started.html#api-key) for more info about the api-key.
+<br />
+
 
 ## Config:
