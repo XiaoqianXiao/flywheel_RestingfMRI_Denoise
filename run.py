@@ -46,7 +46,6 @@ def generate_command(config, work_dir, output_analysis_id_dir, errors, warnings)
         BIDS_APP,
         os.path.join(work_dir, "bids"),
         str(output_analysis_id_dir),
-        ANALYSIS_LEVEL,
     ]
 
     # get parameters to pass to the command by skipping gear config parameters
