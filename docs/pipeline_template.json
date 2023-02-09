@@ -1,12 +1,12 @@
 {
   "name": "put the name you want for the customized pipeline here",
   "description": "Descripe the pipeline if you want",
-  # 7 noises in total[wm, csf, gs, motion, acompcor, aroma, spikes]
-  # for [acompcor, aroma] assign True if you want to add it for denoise and False if not.
-  # for [wm, csf, gs, motion] assign False if not to include, and if wanted, add two sub-level keys for 'temp_deriv' and 'quad_terms' and assign True or False to them.
-  # for [spikes] assign False if no spike is wanted, and if wanted two sub-key 'fd_th' and 'dvars_th' need to be added:
-  ## fd_th: framewise_displacement threshold, numeric which scans have fd greater thant it will be identified as outliers. 
-  ## dvars_th: std_dvars threshold, numeric which scans have std_dvars greater thant it will be identified as outliers. 
+  //# 7 noises in total[wm, csf, gs, motion, acompcor, aroma, spikes]
+  //# for [acompcor, aroma] assign True if you want to add it for denoise and False if not.
+  //# for [wm, csf, gs, motion] assign False if not to include, and if wanted, add two sub-level keys for 'temp_deriv' and 'quad_terms' and assign True or False to them.
+  //# for [spikes] assign False if no spike is wanted, and if wanted two sub-key 'fd_th' and 'dvars_th' need to be added:
+  //## fd_th: framewise_displacement threshold, numeric which scans have fd greater thant it will be identified as outliers. 
+  //## dvars_th: std_dvars threshold, numeric which scans have std_dvars greater thant it will be identified as outliers. 
   "confounds":
   {
     "wm":
