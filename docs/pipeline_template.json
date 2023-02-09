@@ -1,6 +1,7 @@
 {
   "name": "put the name you want for the customized pipeline here",
   "description": "Descripe the pipeline if you want",
+  //# please note that comments are not formal in json file, you need delete them for future useage.
   //# 7 noises in total[wm, csf, gs, motion, acompcor, aroma, spikes]
   //# for [acompcor, aroma] assign True if you want to add it for denoise and False if not.
   //# for [wm, csf, gs, motion] assign False if not to include, and if wanted, add two sub-level keys for 'temp_deriv' and 'quad_terms' and assign True or False to them.
