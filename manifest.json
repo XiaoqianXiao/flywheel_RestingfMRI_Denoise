@@ -10,7 +10,74 @@
       "api-key": {
           "base": "api-key"
         }
-    },                                          
+    },
+    "config": {
+        "wm": {
+            "default": false,
+            "description": "run anatomical workflows only",
+            "type": "boolean"
+        },
+        "wm-temp_deriv": {
+            "default": false,
+            "description": "run anatomical workflows only",
+            "type": "boolean"
+        },
+        "wm-quad_terms": {
+            "default": false,
+            "description": "run anatomical workflows only",
+            "type": "boolean"
+        },
+        "csf": {
+            "default": false,
+            "description": "run anatomical workflows only",
+            "type": "boolean"
+        },
+        "csf-temp_deriv": {
+            "default": false,
+            "description": "run anatomical workflows only",
+            "type": "boolean"
+        },
+        "csf-quad_terms": {
+            "default": false,
+            "description": "run anatomical workflows only",
+            "type": "boolean"
+        },
+        "gs": {
+            "default": false,
+            "description": "run anatomical workflows only",
+            "type": "boolean"
+        },
+        "gs-temp_deriv": {
+            "default": false,
+            "description": "run anatomical workflows only",
+            "type": "boolean"
+        },
+        "gs-quad_terms": {
+            "default": false,
+            "description": "run anatomical workflows only",
+            "type": "boolean"
+        },
+        "acompcor": {
+            "default": false,
+            "description": "run anatomical workflows only",
+            "type": "boolean"
+        },
+        "aroma": {
+            "default": false,
+            "description": "run anatomical workflows only",
+            "type": "boolean"
+        },
+        "fd_th": {
+            "default": 0.5,
+            "description": "framewise_displacement threshold, numeric which scans have fd greater thant it will be identified as outliers.",
+            "type": "integer"
+        },
+        "dvars_th": {
+            "default": 3,
+            "description": "std_dvars threshold, numeric which scans have std_dvars greater thant it will be identified as outliers.",
+            "type": "integer"
+        }
+    },
     "custom": {
         "docker-image": "xiaoqianxiao/test:latest",
         "flywheel": {
