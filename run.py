@@ -106,7 +106,13 @@ def main(gtk_context):
     gear_name = gtk_context.manifest["name"]
     # run-time configuration options from the gear's context.json
     config = gtk_context.config
-    dry_run = config.get("gear-dry-run")
+    
+    import json
+    data = {}
+    data['name'] = config.get("name")
+    data['description'] = config.get("description")
+    
+    json_data = json.dumps(data)
 
     # Given the destination container, figure out if running at the project,
     # subject, or session level.
