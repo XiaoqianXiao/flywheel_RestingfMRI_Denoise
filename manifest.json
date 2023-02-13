@@ -12,6 +12,16 @@
         }
     },
     "config": {
+        "name": {
+            "default": "custom-pipline",
+            "description": "pipline set by gear user",
+            "type": "string"
+        },
+        "description": {
+            "default": "pipline set by gear user",
+            "description": "descrip this pipline",
+            "type": "string"
+        },
         "wm": {
             "default": false,
             "description": "run anatomical workflows only",
