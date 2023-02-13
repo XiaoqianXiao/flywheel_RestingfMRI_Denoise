@@ -12,6 +12,11 @@
         }
     },
     "config": {
+        "using custom-pipline": {
+            "default": false,
+            "description": "check if you want to custom the denoise pipeline here",
+            "type": "boolean"
+        },
         "name": {
             "default": "custom-pipline",
             "description": "pipline set by gear user",
