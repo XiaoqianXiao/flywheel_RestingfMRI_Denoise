@@ -12,7 +12,7 @@
         }
     },
     "config": {
-        "using custom-pipline": {
+        "use_custom_pipline": {
             "default": false,
             "description": "check if you want to custom the denoise pipeline here",
             "type": "boolean"
@@ -29,57 +29,57 @@
         },
         "wm": {
             "default": false,
-            "description": "run anatomical workflows only",
+            "description": "add white matter or not",
             "type": "boolean"
         },
         "wm-temp_deriv": {
             "default": false,
-            "description": "run anatomical workflows only",
+            "description": "add white matter temp_deriv or not",
             "type": "boolean"
         },
         "wm-quad_terms": {
             "default": false,
-            "description": "run anatomical workflows only",
+            "description": "add white matter quad_terms or not",
             "type": "boolean"
         },
         "csf": {
             "default": false,
-            "description": "run anatomical workflows only",
+            "description": "add csf or not",
             "type": "boolean"
         },
         "csf-temp_deriv": {
             "default": false,
-            "description": "run anatomical workflows only",
+            "description": "add csf temp_deriv or not",
             "type": "boolean"
         },
         "csf-quad_terms": {
             "default": false,
-            "description": "run anatomical workflows only",
+            "description": "add csf quad_terms or not",
             "type": "boolean"
         },
         "gs": {
             "default": false,
-            "description": "run anatomical workflows only",
+            "description": "add global signal or not",
             "type": "boolean"
         },
         "gs-temp_deriv": {
             "default": false,
-            "description": "run anatomical workflows only",
+            "description": "add global signal temp_deriv or not",
             "type": "boolean"
         },
         "gs-quad_terms": {
             "default": false,
-            "description": "run anatomical workflows only",
+            "description": "add global signal quad_terms or not",
             "type": "boolean"
         },
         "acompcor": {
             "default": false,
-            "description": "run anatomical workflows only",
+            "description": "add acompcor or not",
             "type": "boolean"
         },
         "aroma": {
             "default": false,
-            "description": "run anatomical workflows only",
+            "description": "add aroma or not",
             "type": "boolean"
         },
         "fd_th": {
