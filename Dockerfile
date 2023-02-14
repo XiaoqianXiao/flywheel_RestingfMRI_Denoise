@@ -13,6 +13,15 @@ ENV REQUESTS_CA_BUNDLE "/etc/ssl/certs/ca-certificates.crt"
 # Save docker environ here to keep it separate from the Flywheel gear environment
 RUN python -c 'import os, json; f = open("/flywheel/v0/gear_environ.json", "w"); json.dump(dict(os.environ), f)'
 
+RUN apt-get update && \
+    curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+    apt-get install -y \
+    time \
+    zip \
+    nodejs \
+    tree && \
+    rm -rf /var/lib/apt/lists/*
+    
 # Python 3.7.1 (default, Dec 14 2018, 19:28:38)
 # [GCC 7.3.0] :: Anaconda, Inc. on linux
 RUN pip install poetry && \
