@@ -17,6 +17,7 @@ RUN pip install poetry && \
     rm -rf /root/.cache/pip
 
 
+ENV PATH="${PATH}:/root/.poetry/bin"
 COPY poetry.lock pyproject.toml $FLYWHEEL/
 RUN poetry install --no-dev
 
