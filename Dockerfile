@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends git && \
     pip install --no-cache "poetry==1.1.10"
 
 # Installing main dependencies
-COPY poetry.lock pyproject.toml $FLYWHEEL/
+COPY pyproject.toml $FLYWHEEL/
 RUN poetry install --no-dev
 
 # Save docker environ
