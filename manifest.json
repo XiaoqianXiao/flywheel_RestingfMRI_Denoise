@@ -110,7 +110,8 @@
     "environment": {       
         "FLYWHEEL": "/flywheel/v0",
         "PYTHONUNBUFFERED": "1",
-        "PWD": "/flywheel/v0"
+        "PWD": "/flywheel/v0",
+        "CONDA_EXE": "/opt/conda/bin/conda"
     },
     "label": "RestingfMRI_Denoise",
     "license": "",
