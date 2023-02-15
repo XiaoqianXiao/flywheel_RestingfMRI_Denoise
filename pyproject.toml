@@ -7,8 +7,9 @@ readme = "README.md"
 packages = [{include = "flywheel_restingfmri_denoise"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-
+python = "^3.8"
+flywheel-gear-toolkit = "^0.6.2"
+flywheel-sdk = "^15.8.0"
 
 [build-system]
 requires = ["poetry-core"]
