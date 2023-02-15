@@ -18,7 +18,7 @@ RUN pip install poetry && \
 
 
 COPY poetry.lock pyproject.toml $FLYWHEEL/
-RUN poetry install --no-dev
+RUN poetry install --no-root
 
 ENV PYTHONUNBUFFERED 1
 
