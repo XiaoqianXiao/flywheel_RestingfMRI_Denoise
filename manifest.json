@@ -109,6 +109,7 @@
     "description": "",
     "environment": {       
         "FLYWHEEL": "/flywheel/v0",
+        "PYTHONUNBUFFERED": "1",
         "PWD": "/flywheel/v0"
     },
     "label": "RestingfMRI_Denoise",
