@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "flywheel-restingfmri-denoise"
+version = "0.1.0"
+description = ""
+authors = ["XiaoXiaoqian <xiaoqian@stanford.edu>"]
+readme = "README.md"
+packages = [{include = "flywheel_restingfmri_denoise"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
