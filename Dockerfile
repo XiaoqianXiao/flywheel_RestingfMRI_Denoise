@@ -21,7 +21,7 @@ RUN poetry install --no-dev
 #COPY user.json /root/.config/flywheel/user.json
 # Copy executable/manifest to Gear
 COPY manifest.json ${FLYWHEEL}/manifest.json
-COPY fw_gear_precurate ${FLYWHEEL}/fw_gear_precurate
+COPY utils ${FLYWHEEL}/utils
 COPY run.py ${FLYWHEEL}/run.py
 
 # Configure entrypoint
