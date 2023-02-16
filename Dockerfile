@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends git && \
     pip install --no-cache "poetry==1.1.10"
 
 # Installing main dependencies
-COPY pyproject.toml poetry.lock $FLYWHEEL/
+#COPY pyproject.toml poetry.lock $FLYWHEEL/
+COPY pyproject.toml $FLYWHEEL/
 RUN poetry install --no-dev
 
 ############## DEV ONLY ##########
