@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends git && \
 # Installing main dependencies
 #COPY pyproject.toml poetry.lock $FLYWHEEL/
 COPY pyproject.toml $FLYWHEEL/
-RUN poetry install --no-dev
+RUN poetry install --no-root
 
 ############## DEV ONLY ##########
 #COPY user.json /root/.config/flywheel/user.json
