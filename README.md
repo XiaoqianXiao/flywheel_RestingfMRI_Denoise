@@ -1,5 +1,5 @@
 # flywheel_RestingfMRI_Denoise
-Modified from [fmriprep flywheel gear](https://github.com/flywheel-apps/bids-fmriprep).
+The scrips for building the gear were mostly modified from [fmriprep flywheel gear](https://github.com/flywheel-apps/bids-fmriprep).
 ## Setup:
 The RestingfMRI_Denoise using fMRIprep outputs as input. Before running RestingfMRI_Denoise, you must run fmripep first.
 ## Running:
