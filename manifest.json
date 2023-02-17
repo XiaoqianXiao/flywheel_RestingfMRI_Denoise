@@ -96,7 +96,7 @@
     "custom": {
         "gear-builder": {
             "category": "analysis",
-            "image": "flywheel/bids-fmriprep:1.4.1_20.2.7rc2"
+            "image": "python"
         }
     },
     "description": "",
