@@ -96,7 +96,7 @@ flywheel-gears = ">=0.2,<0.3"
 fw-meta = ">=2,<3"
 jsonschema = ">=3.2.0,<4.0.0"
 pathvalidate = ">=2.5.0,<3.0.0"
-pydantic = ">=1.8.1,<2.0.0"
+pydantic = ">=1.7.3,<2.0.0"
 
 [package.extras]
 all = ["flywheel-sdk (>=14.2.0)", "flywheel-bids (>=1.0.4,<2.0.0)", "numpy (>=1,<2)", "fw-file (>=1,<2)", "nipype (>=1.6,<2.0)", "nibabel (>=3.2.1,<4.0.0)"]
