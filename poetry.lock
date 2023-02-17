@@ -83,7 +83,7 @@ urllib3 = ">=1.26.4"
 
 [[package]]
 name = "flywheel-gear-toolkit"
-version = "0.6.3"
+version = "0.6.2"
 description = "Tooling for developing Flywheel gears"
 category = "main"
 optional = false
