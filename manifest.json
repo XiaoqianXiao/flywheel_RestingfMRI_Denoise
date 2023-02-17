@@ -96,7 +96,7 @@
     "custom": {
         "gear-builder": {
             "category": "analysis",
-            "image": "python"
+            "image": "python3"
         }
     },
     "description": "",
