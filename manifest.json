@@ -96,7 +96,7 @@
     "custom": {
         "gear-builder": {
             "category": "analysis",
-            "image": "xiaoqianxiao/restingfmri_denoise:0.1.0"
+            "image": "xiaoqianxiao/fw_restingfmri_denoise:0.1.0"
         }
     },
     "description": "",
