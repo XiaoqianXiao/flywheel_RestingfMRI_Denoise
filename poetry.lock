@@ -83,17 +83,28 @@ urllib3 = ">=1.26.4"
 
 [[package]]
 name = "flywheel-gear-toolkit"
-version = ">=0.6.0,<0.7.0"
+version = "0.6.3"
 description = "Tooling for developing Flywheel gears"
 category = "main"
 optional = false
 python-versions = ">=3.7,<4.0"
 
 [package.dependencies]
+"backports.zoneinfo" = {version = ">=0.2.1,<0.3.0", markers = "python_version == \"3.8\""}
 dotty-dict = ">=1.2.1,<2.0.0"
-flywheel-bids = ">=0.9.1,<0.10.0"
-flywheel-gears = ">=0.2.0,<0.3.0"
-flywheel-sdk = ">=14.2.0"
+flywheel-gears = ">=0.2,<0.3"
+fw-meta = ">=2,<3"
+jsonschema = ">=3.2.0,<4.0.0"
+pathvalidate = ">=2.5.0,<3.0.0"
+pydantic = ">=1.8.1,<2.0.0"
+
+[package.extras]
+all = ["flywheel-sdk (>=14.2.0)", "flywheel-bids (>=1.0.4,<2.0.0)", "numpy (>=1,<2)", "fw-file (>=1,<2)", "nipype (>=1.6,<2.0)", "nibabel (>=3.2.1,<4.0.0)"]
+sdk = ["flywheel-sdk (>=14.2.0)", "flywheel-bids (>=1.0.4,<2.0.0)"]
+numpy = ["numpy (>=1,<2)"]
+fw-file = ["fw-file (>=1,<2)"]
+dicom = ["fw-file (>=1,<2)", "nibabel (>=3.2.1,<4.0.0)"]
+nipype = ["nipype (>=1.6,<2.0)", "nibabel (>=3.2.1,<4.0.0)"]
 
 [[package]]
 name = "flywheel-gears"
