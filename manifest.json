@@ -93,6 +93,11 @@
             "type": "integer"
         }
     },
+    "custom": {
+        "gear-builder": {
+            "category": "analysis",
+            "image": "flywheel/restingfmri_denoise:0.1.0"
+    },
     "description": "",
     "environment": {       
         "FLYWHEEL": "/flywheel/v0",
@@ -105,5 +110,5 @@
     "maintainer": "Xiaoqian <xiaoqian@stanford.edu>",
     "name": "RestingfMRI_Denoise",
     "source": "https://github.com/XiaoXiaoqian/RestingfMRI_Denoise.git",
-    "version": "0.1"
+    "version": "0.1.0"
 }
