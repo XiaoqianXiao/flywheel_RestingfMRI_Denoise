@@ -6,14 +6,19 @@ LABEL maintainer="xiaoqian@stanford.edu"
 ENV FLYWHEEL /flywheel/v0
 WORKDIR ${FLYWHEEL}
 
-# Save docker environ
-ENV PYTHONUNBUFFERED 1
-# Dev install. git for pip editable install.
-RUN apt-get update && apt-get install -y --no-install-recommends git && \
-    pip install --no-cache "poetry==1.1.10"
+# Save docker environ here to keep it separate from the Flywheel gear environment
+RUN python -c 'import os, json; f = open("/flywheel/v0/gear_environ.json", "w"); json.dump(dict(os.environ), f)'
+
+# Python 3.7.1 (default, Dec 14 2018, 19:28:38)
+# [GCC 7.3.0] :: Anaconda, Inc. on linux
+RUN pip install poetry && \
+    rm -rf /root/.cache/pip
+
 
 COPY poetry.lock pyproject.toml $FLYWHEEL/
 RUN poetry install --no-dev
+
+ENV PYTHONUNBUFFERED 1
 
 ############## DEV ONLY ##########
 #COPY user.json /root/.config/flywheel/user.json
@@ -24,4 +29,4 @@ COPY run.py ${FLYWHEEL}/run.py
 
 # Configure entrypoint
 RUN chmod a+x ${FLYWHEEL}/run.py
-ENTRYPOINT ["poetry","run","python","/flywheel/v0/run.py"]
+ENTRYPOINT ["/flywheel/v0/run.py"]
