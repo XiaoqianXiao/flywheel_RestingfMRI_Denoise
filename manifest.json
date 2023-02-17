@@ -93,19 +93,6 @@
             "type": "integer"
         }
     },
-    "custom": {
-        "docker-image": "xiaoqianxiao/test:latest",
-        "flywheel": {
-            "suite": "BIDS Apps"
-        },
-        "gear-builder": {
-            "category": "analysis",
-            "image": "xiaoqianxiao/test:latest"
-        },
-        "license": {
-            "non-commercial-use-only": true
-        }
-    },
     "description": "",
     "environment": {       
         "FLYWHEEL": "/flywheel/v0",
@@ -118,6 +105,5 @@
     "maintainer": "Xiaoqian <xiaoqian@stanford.edu>",
     "name": "RestingfMRI_Denoise",
     "source": "https://github.com/XiaoXiaoqian/RestingfMRI_Denoise.git",
-    "url": "https://github.com/flywheel-apps/bids-fmriprep/blob/master/README.md",
     "version": "0.1"
 }
