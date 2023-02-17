@@ -1,6 +1,6 @@
 {
     "author": "Xiaoqian Xiao",
-    "command": "/root/.cache/pypoetry/virtualenvs/flywheel-restingfmri-denoise-n1iZ4KF1-py3.8/bin/python run.py",
+    "command": "poetry run python run.py",
      "inputs": {
         "pipelines": {
             "description": "Name of pipelines used for denoising, can be both file of json files with pipeline or file with name of pipelines from package",
@@ -96,7 +96,7 @@
     "custom": {
         "gear-builder": {
             "category": "analysis",
-            "image": "flywheel/restingfmri_denoise:0.1.0"
+            "image": "flywheel/bids-fmriprep:1.4.1_20.2.7rc2"
         }
     },
     "description": "",
