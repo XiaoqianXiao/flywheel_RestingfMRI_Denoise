@@ -107,7 +107,7 @@
         "CONDA_EXE": "/opt/conda/bin/conda"
     },
     "label": "restingfmri_denoise",
-    "license": "",
+    "license": "Other",
     "maintainer": "Xiaoqian <xiaoqian@stanford.edu>",
     "name": "restingfmri_denoise",
     "source": "https://github.com/XiaoXiaoqian/RestingfMRI_Denoise.git",
