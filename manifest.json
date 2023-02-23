@@ -106,10 +106,10 @@
         "PWD": "/flywheel/v0",
         "CONDA_EXE": "/opt/conda/bin/conda"
     },
-    "label": "restingfmri_denoise",
+    "label": "restingfmri-denoise",
     "license": "Other",
     "maintainer": "Xiaoqian <xiaoqian@stanford.edu>",
-    "name": "restingfmri_denoise",
+    "name": "restingfmri-denoise",
     "source": "https://github.com/XiaoXiaoqian/RestingfMRI_Denoise.git",
     "version": "0.1.0",
     "url": "https://github.com/XiaoXiaoqian/flywheel_RestingfMRI_Denoise/blob/main/README.md"
