@@ -105,7 +105,8 @@
         "PYTHONUNBUFFERED": "1",
         "PWD": "/flywheel/v0",
         "CONDA_EXE": "/opt/conda/bin/conda",
-        "CPATH": "/usr/local/miniconda/include/:"
+        "CPATH": "/usr/local/miniconda/include/:",
+        "PATH": "/opt/conda/bin:/opt/conda/condabin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
     },
     "label": "restingfmri-denoise",
     "license": "Other",
