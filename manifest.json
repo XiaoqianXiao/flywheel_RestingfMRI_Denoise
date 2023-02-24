@@ -105,8 +105,7 @@
         "PYTHONUNBUFFERED": "1",
         "PWD": "/flywheel/v0",
         "CONDA_EXE": "/opt/conda/bin/conda",
-        "CPATH": "/usr/local/miniconda/include/:",
-        "REQUESTS_CA_BUNDLE": "/etc/ssl/certs/ca-certificates.crt"
+        "CPATH": "/usr/local/miniconda/include/:"
     },
     "label": "restingfmri-denoise",
     "license": "Other",
