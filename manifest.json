@@ -1,6 +1,6 @@
 {
     "author": "Xiaoqian Xiao",
-    "command": "poetry run python run.py",
+    "command": "/usr/local/miniconda/bin/python3.7 /flywheel/v0/run.py",
      "inputs": {
         "pipelines": {
             "description": "Name of pipelines used for denoising, can be both file of json files with pipeline or file with name of pipelines from package",
