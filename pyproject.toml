@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.8"
 flywheel-gear-toolkit = "^0.6.2"
-flywheel-sdk = "^15"
+flywheel-sdk = "^16.14.21"
 
 [build-system]
 requires = ["poetry-core"]
