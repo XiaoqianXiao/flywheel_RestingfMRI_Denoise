@@ -1,6 +1,6 @@
 {
     "author": "Xiaoqian Xiao",
-    "command": "/usr/local/miniconda/bin/python3.7 /flywheel/v0/run.py",
+    "command": "poetry run python run.py",
      "inputs": {
         "pipelines": {
             "description": "Name of pipelines used for denoising, can be both file of json files with pipeline or file with name of pipelines from package",
@@ -104,7 +104,9 @@
         "FLYWHEEL": "/flywheel/v0",
         "PYTHONUNBUFFERED": "1",
         "PWD": "/flywheel/v0",
-        "CONDA_EXE": "/opt/conda/bin/conda"
+        "CONDA_EXE": "/opt/conda/bin/conda",
+        "CPATH": "/usr/local/miniconda/include/:",
+        "REQUESTS_CA_BUNDLE": "/etc/ssl/certs/ca-certificates.crt"
     },
     "label": "restingfmri-denoise",
     "license": "Other",
