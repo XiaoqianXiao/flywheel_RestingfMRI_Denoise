@@ -154,6 +154,7 @@ def main(gtk_context):
     # Download fmriprep results as the input of the gear
     if len(errors) == 0:
         download_bids_for_runlevel(
+            gtk_context.client,
             gtk_context,
             hierarchy,
             output_dir
