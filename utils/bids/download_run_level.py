@@ -1,4 +1,5 @@
 def download_bids_for_runlevel(
+    client,
     gtk_context,
     hierarchy,
     output_dir):
