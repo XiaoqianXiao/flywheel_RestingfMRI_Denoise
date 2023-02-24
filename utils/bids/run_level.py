@@ -18,8 +18,8 @@ def get_analysis_run_level_and_hierarchy(fw, destination_id):
     hierarchy = {
         "run_level": "no_destination",
         "run_label": "unknown",
-        "group": None,
-        "project_label": None,
+        "group": "unknown",
+        "project_label": "unknown",
         "subject_label": None,
         "session_label": None,
         "acquisition_label": None,
