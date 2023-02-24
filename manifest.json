@@ -85,12 +85,12 @@
         "fd_th": {
             "default": 0.5,
             "description": "framewise_displacement threshold, numeric which scans have fd greater thant it will be identified as outliers.",
-            "type": "integer"
+            "type": "number"
         },
         "dvars_th": {
             "default": 3,
             "description": "std_dvars threshold, numeric which scans have std_dvars greater thant it will be identified as outliers.",
-            "type": "integer"
+            "type": "number"
         }
     },
     "custom": {
