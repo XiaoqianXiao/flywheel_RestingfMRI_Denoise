@@ -1,6 +1,6 @@
 def download_bids_for_runlevel(
+    gtk_context,
     hierarchy,
-    destination_id,
     output_dir):
     """Copy fmriprep processed output to working container.
     Args:
