@@ -18,6 +18,7 @@ from flywheel_gear_toolkit.utils.zip_tools import unzip_archive, zip_output
 
 from utils.bids.download_run_level import download_bids_for_runlevel
 from utils.bids.run_level import get_analysis_run_level_and_hierarchy
+from utils.singularity import run_in_tmp_dir
 
 log = logging.getLogger(__name__)
 GEAR = "RestingfMRI_Denoising"
