@@ -147,7 +147,7 @@ def main(gtk_context):
         Path(output_analysis_id_dir).mkdir()
             
     command = generate_command(
-        gtk_context, config, work_dir, output_analysis_id_dir, errors, warnings
+        gtk_context, config, work_dir, output_analysis_id_dir, errors
     )
 
     # Download fmriprep results as the input of the gear
