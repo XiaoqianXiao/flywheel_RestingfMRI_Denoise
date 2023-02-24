@@ -120,7 +120,7 @@ rfc3987 = ">=1.3.7"
 
 [[package]]
 name = "flywheel-sdk"
-version = "15.1.0"
+version = "16.14.21"
 description = "Flywheel SDK"
 category = "main"
 optional = false
