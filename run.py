@@ -57,7 +57,8 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
     if pipelines_file_path:
         paths = list(Path("input/pipelines").glob("*"))
         command_parameters['pipelines'] = paths[0]
-    log_to_file = False 
+    log_to_file = False
+    use_custom_pipline = config['use_custom_pipline']
     if use_custom_pipline:
         pipeline_json_dict['name'] = config['name']
         pipeline_json_dict['description'] = config['description']
