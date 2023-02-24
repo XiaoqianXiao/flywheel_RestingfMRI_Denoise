@@ -28,7 +28,7 @@ BIDS_APP = "RestingfMRI_Denoising"
 # What level to run at (positional_argument #3)
 ANALYSIS_LEVEL = "project"
 
-def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, errors, warnings):
+def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, errors):
     """Build the main command line command to run.
     Args:
         config (GearToolkitContext.config): run-time options from config.json
