@@ -1,3 +1,4 @@
+import os
 def download_bids_for_runlevel(
     client,
     destination_id,
