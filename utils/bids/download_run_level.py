@@ -43,29 +43,29 @@ def download_bids_for_runlevel(
                         output_file_name = os.path.join(output_dir,'fmriprep/zip_files',f.name)
                         if not os.path.exists(output_file_name):
                                f.download(output_file_name)
-    else:
-        destination = client.get(destination_id)
-        container = fw.get(destination.parents[run_level])
-        s = container
-        analyses = s.reload()['analyses']
-        prep_list = []
-        createdTime_list = []
-        for a in analyses:
-            if a.gear_info:
-                if (a.gear_info.name == file_of_interest and a.files):
-                    analysisID =  a._id
-                    prep_list.append(a._id)
-                    createdTime_list.append(a.created.strftime("%Y-%m-%d"))
-            if len(prep_list) > 1:
-                latest_index = createdTime_list.index(max(createdTime_list))
-                analysisID = prep_list[latest_index]
-            if prep_list:
-                analysis = client.get(analysisID)
-                for f in analysis.files:
-                    if f.name.startswith(file_of_interest):
-                        output_file_name = os.path.join(output_dir,'fmriprep/zip_files',f.name)
-                        if not os.path.exists(output_file_name):
-                               f.download(output_file_name)
+#     else:
+#         destination = client.get(destination_id)
+#         container = fw.get(destination.parents[run_level])
+#         s = container
+#         analyses = s.reload()['analyses']
+#         prep_list = []
+#         createdTime_list = []
+#         for a in analyses:
+#             if a.gear_info:
+#                 if (a.gear_info.name == file_of_interest and a.files):
+#                     analysisID =  a._id
+#                     prep_list.append(a._id)
+#                     createdTime_list.append(a.created.strftime("%Y-%m-%d"))
+#             if len(prep_list) > 1:
+#                 latest_index = createdTime_list.index(max(createdTime_list))
+#                 analysisID = prep_list[latest_index]
+#             if prep_list:
+#                 analysis = client.get(analysisID)
+#                 for f in analysis.files:
+#                     if f.name.startswith(file_of_interest):
+#                         output_file_name = os.path.join(output_dir,'fmriprep/zip_files',f.name)
+#                         if not os.path.exists(output_file_name):
+#                                f.download(output_file_name)
                             
 def walklevel(some_dir, level=1):
     some_dir = some_dir.rstrip(os.path.sep)
