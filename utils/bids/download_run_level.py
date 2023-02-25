@@ -6,7 +6,6 @@ def download_bids_for_runlevel(
     """Copy fmriprep processed output to working container.
     Args:
         hierarchy: the dictionary of the run level info
-        destination_id: id of the destination of the gear
     """
     group_label = 'nolanw'
     project_label = hierarchy['project_label']
@@ -44,8 +43,6 @@ def download_bids_for_runlevel(
                         if not os.path.exists(output_file_name):
                                f.download(output_file_name)
     else:
-        destination_id = gtk_context.destination["id"]
-        destination = client.get(destination_id)
         analyses = s.reload()['analyses']
         prep_list = []
         createdTime_list = []
