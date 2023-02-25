@@ -160,12 +160,12 @@ def main(gtk_context):
             destination_id,
             gtk_context,
             hierarchy,
-            output_dir
+            work_dir
         )
         # un-zip fmriprep output and re-orgernize.
         import os, zipfile
         import re
-        fmripep_dir = os.path.join(work_dir, "bids")
+        fmripep_dir = os.path.join(work_dir, "fmripep")
         zipFile_dir = os.path.join(fmripep_dir, 'zip_files')
         unzipFile_dir = os.path.join(fmripep_dir, 'unzipped_files')  
         extension = ".zip"
