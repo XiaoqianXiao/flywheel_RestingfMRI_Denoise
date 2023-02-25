@@ -1,5 +1,6 @@
 def download_bids_for_runlevel(
     client,
+    destination_id,
     gtk_context,
     hierarchy,
     output_dir):
@@ -43,6 +44,8 @@ def download_bids_for_runlevel(
                         if not os.path.exists(output_file_name):
                                f.download(output_file_name)
     else:
+        destination = client.get(destination_id)
+        s = destination
         analyses = s.reload()['analyses']
         prep_list = []
         createdTime_list = []
