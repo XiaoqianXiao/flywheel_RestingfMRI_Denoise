@@ -45,7 +45,7 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
     # These follow the BIDS Apps definition (https://github.com/BIDS-Apps)
     cmd = [
         BIDS_APP,
-        os.path.join(work_dir, "bids"),
+        os.path.join(work_dir, "fmriprep"),
     ]
 
     # get parameters to pass to the command by skipping gear config parameters
