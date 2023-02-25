@@ -3,7 +3,7 @@ def download_bids_for_runlevel(
     destination_id,
     gtk_context,
     hierarchy,
-    output_dir):
+    work_dir):
     """Copy fmriprep processed output to working container.
     Args:
         hierarchy: the dictionary of the run level info
@@ -40,7 +40,7 @@ def download_bids_for_runlevel(
                 analysis = client.get(analysisID)
                 for f in analysis.files:
                     if f.name.startswith(file_of_interest):
-                        output_file_name = os.path.join(output_dir,'fmriprep/zip_files',f.name)
+                        output_file_name = os.path.join(work_dir,'fmriprep/zip_files',f.name)
                         if not os.path.exists(output_file_name):
                                f.download(output_file_name)
 #     else:
@@ -63,7 +63,7 @@ def download_bids_for_runlevel(
 #                 analysis = client.get(analysisID)
 #                 for f in analysis.files:
 #                     if f.name.startswith(file_of_interest):
-#                         output_file_name = os.path.join(output_dir,'fmriprep/zip_files',f.name)
+#                         output_file_name = os.path.join(work_dir,'fmriprep/zip_files',f.name)
 #                         if not os.path.exists(output_file_name):
 #                                f.download(output_file_name)
                             
