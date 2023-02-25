@@ -157,6 +157,7 @@ def main(gtk_context):
     if len(errors) == 0:
         download_bids_for_runlevel(
             gtk_context.client,
+            destination_id,
             gtk_context,
             hierarchy,
             output_dir
