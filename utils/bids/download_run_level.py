@@ -45,7 +45,8 @@ def download_bids_for_runlevel(
                                f.download(output_file_name)
     else:
         destination = client.get(destination_id)
-        s = destination
+        container = fw.get(destination.parents[run_level])
+        s = container
         analyses = s.reload()['analyses']
         prep_list = []
         createdTime_list = []
