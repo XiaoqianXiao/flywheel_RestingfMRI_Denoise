@@ -188,7 +188,8 @@ def main(gtk_context):
                 for filename in os.listdir(root):
                     if 'ses' in filename.split('-'):
                         shutil.move(os.path.join(root,filename), os.path.join(fmripep_dir,re.split('/',root)[-1],filename))
-        shutil.move(os.path.join(root,'dataset_description.json'), fmripep_dir)
+        if os.path.isfile(os.path.join(root,'dataset_description.json')):
+            shutil.move(os.path.join(root,'dataset_description.json'), fmripep_dir)
     else:
         log.info("Did not download fmriprep because of previous errors")
         print(errors)
