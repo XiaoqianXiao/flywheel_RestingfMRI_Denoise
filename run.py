@@ -133,6 +133,7 @@ def main(gtk_context):
     # subject, or session level.
     destination_id = gtk_context.destination["id"]
     hierarchy = get_analysis_run_level_and_hierarchy(gtk_context.client, destination_id)
+    print(hierarchy)
 
     # Output will be put into a directory named as the destination id.
     # This allows the raw output to be deleted so that a zipped archive
