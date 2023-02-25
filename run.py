@@ -132,6 +132,7 @@ def main(gtk_context):
     # Given the destination container, figure out if running at the project,
     # subject, or session level.
     destination_id = gtk_context.destination["id"]
+    print(destination_id)
     hierarchy = get_analysis_run_level_and_hierarchy(gtk_context.client, destination_id)
     print(hierarchy)
 
