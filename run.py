@@ -154,6 +154,16 @@ def main(gtk_context):
     )
 
     # Download fmriprep results as the input of the gear
+    fmripep_dir = os.path.join(work_dir, "fmripep")
+    zipFile_dir = os.path.join(fmripep_dir, 'zip_files')
+    isExist = os.path.exists(zipFile_dir)
+    if not isExist:
+       os.makedirs(zipFile_dir)
+    
+    unzipFile_dir = os.path.join(fmripep_dir, 'unzipped_files') 
+    isExist = os.path.exists(unzipFile_dir)
+    if not isExist:
+       os.makedirs(unzipFile_dir)
     if len(errors) == 0:
         download_bids_for_runlevel(
             gtk_context.client,
@@ -163,11 +173,8 @@ def main(gtk_context):
             work_dir
         )
         # un-zip fmriprep output and re-orgernize.
-        import os, zipfile
+        import zipfile
         import re
-        fmripep_dir = os.path.join(work_dir, "fmripep")
-        zipFile_dir = os.path.join(fmripep_dir, 'zip_files')
-        unzipFile_dir = os.path.join(fmripep_dir, 'unzipped_files')  
         extension = ".zip"
         for item in os.listdir(zipFile_dir): # loop through items in dir
             if item.endswith(extension): # check for ".zip" extension
