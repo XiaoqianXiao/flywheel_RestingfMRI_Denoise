@@ -24,7 +24,7 @@ log = logging.getLogger(__name__)
 GEAR = "RestingfMRI_Denoising"
 REPO = "xiaoqianxiao"
 CONTAINER = Path(REPO).joinpath(GEAR)
-BIDS_APP = "RestingfMRI_Denoising"
+BIDS_APP = "RestingfMRI_Denoise"
 # What level to run at (positional_argument #3)
 ANALYSIS_LEVEL = "project"
 
