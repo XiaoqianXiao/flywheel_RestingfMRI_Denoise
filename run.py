@@ -54,7 +54,7 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
     command_parameters = {}
     ##
     pipelines_file_path = gtk_context.get_input_path("pipelines")
-    if pipelines_file_path:
+    if pipelines_file_path is not None:
         paths = list(Path("input/pipelines").glob("*"))
         command_parameters['pipelines'] = paths[0]
     log_to_file = False
