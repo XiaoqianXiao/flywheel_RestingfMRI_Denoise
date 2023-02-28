@@ -59,7 +59,7 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
         command_parameters['pipelines'] = paths[0]
     log_to_file = False
     config_keys = config.keys()
-    if 'use_custom_pipline' is in config_keys
+    if 'use_custom_pipline' in config_keys
         use_custom_pipline = config['use_custom_pipline']
         pipeline_json_dict = {}
         if use_custom_pipline is not None:
