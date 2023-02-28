@@ -58,29 +58,31 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
         paths = list(Path("input/pipelines").glob("*"))
         command_parameters['pipelines'] = paths[0]
     log_to_file = False
-    use_custom_pipline = config['use_custom_pipline']
-    pipeline_json_dict = {}
-    if use_custom_pipline:
-        pipeline_json_dict['name'] = config['name']
-        pipeline_json_dict['description'] = config['description']
-        conf_dict = {}
-        for k in ["wm", "csf", "gs", "motion"]:
-            key_temp_deriv = k + '-temp_deriv'
-            key_quad_terms = k + '-quad_terms'
-            if config[k] == "fasle":
-                pipeline_json_dict["confounds"][k] = "False"
+    config_keys = config.keys()
+    if 'use_custom_pipline' is in config_keys
+        use_custom_pipline = config['use_custom_pipline']
+        pipeline_json_dict = {}
+        if use_custom_pipline is not None:
+            pipeline_json_dict['name'] = config['name']
+            pipeline_json_dict['description'] = config['description']
+            conf_dict = {}
+            for k in ["wm", "csf", "gs", "motion"]:
+                key_temp_deriv = k + '-temp_deriv'
+                key_quad_terms = k + '-quad_terms'
+                if config[k] == "fasle":
+                    pipeline_json_dict["confounds"][k] = "False"
+                else:
+                    pipeline_json_dict["confounds"][k]["temp_deriv"] = config[key_temp_deriv]
+                    pipeline_json_dict["confounds"][k]["quad_terms"] = config[key_temp_deriv]
+            pipeline_json_dict["confounds"]["acompcor"] = config["acompcor"]
+            pipeline_json_dict["aroma"] = config["aroma"]
+            if config["spikes"] == "false":
+                pipeline_json_dict["spikes"] = "False"
             else:
-                pipeline_json_dict["confounds"][k]["temp_deriv"] = config[key_temp_deriv]
-                pipeline_json_dict["confounds"][k]["quad_terms"] = config[key_temp_deriv]
-        pipeline_json_dict["confounds"]["acompcor"] = config["acompcor"]
-        pipeline_json_dict["aroma"] = config["aroma"]
-        if config["spikes"] == "false":
-            pipeline_json_dict["spikes"] = "False"
-        else:
-            pipeline_json_dict["fd_th"] = config["fd_th"]
-            pipeline_json_dict["dvars_th"] = config["dvars_th"]
-        json_object = json.dumps(pipeline_json_dict, indent = 4)      
-        command_parameters['pipelines'] = json_object
+                pipeline_json_dict["fd_th"] = config["fd_th"]
+                pipeline_json_dict["dvars_th"] = config["dvars_th"]
+            json_object = json.dumps(pipeline_json_dict, indent = 4)      
+            command_parameters['pipelines'] = json_object
     # Validate the command parameter dictionary - make sure everything is
     # ready to run so errors will appear before launching the actual gear
     # code.  Add descriptions of problems to errors & warnings lists.
