@@ -65,7 +65,6 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
         if use_custom_pipline is not None:
             pipeline_json_dict['name'] = config['name']
             pipeline_json_dict['description'] = config['description']
-            conf_dict = {}
             for k in ["wm", "csf", "gs", "motion"]:
                 key_temp_deriv = k + '-temp_deriv'
                 key_quad_terms = k + '-quad_terms'
@@ -73,7 +72,7 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
                     pipeline_json_dict["confounds"][k] = "False"
                 else:
                     pipeline_json_dict["confounds"][k]["temp_deriv"] = config[key_temp_deriv]
-                    pipeline_json_dict["confounds"][k]["quad_terms"] = config[key_temp_deriv]
+                    pipeline_json_dict["confounds"][k]["quad_terms"] = config[key_quad_terms]
             pipeline_json_dict["confounds"]["acompcor"] = config["acompcor"]
             pipeline_json_dict["aroma"] = config["aroma"]
             if config["spikes"] == "false":
