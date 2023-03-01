@@ -196,12 +196,33 @@ def main(gtk_context):
     else:
         log.info("Did not download fmriprep because of previous errors")
         print(errors)
-    # this is all about it    
-    exec_command(
-                command,
-                environ=environ,
-                shell=True
-            )
+        
+    num_tries = 0
+    if len(errors) > 0:
+        num_tries == 2  # don't try to run
+    while num_tries < 2:
+        try:
+            num_tries += 1
+            if num_tries > 1:
+                log.info("Trying a second time")          
+                # this is all about it    
+                exec_command(
+                            command,
+                            environ=environ,
+                            shell=True
+                        )
+                break
+        except RuntimeError as exc:
+            if num_tries == 2:
+                return_code = 1
+            errors.append(exc)
+            log.critical(exc)
+            log.exception("Unable to execute command.")
+
+            os.system("echo ")
+            os.system("echo Disk Information on Failure")
+            os.system("df -h")
+             
     # zip entire output/<analysis_id> folder into <gear_name>_<analysis.id>.zip
     zip_file_name = gear_name + f"_{destination_id}.zip"
     zip_output(
@@ -223,6 +244,29 @@ def main(gtk_context):
 
     else:
         log.info("Output directory does not exist so it cannot be removed")
+        
+     if len(errors) > 0:
+        msg = "Previous errors:\n"
+        for err in errors:
+            if str(type(err)).split("'")[1] == "str":
+                # show string
+                msg += "  Error msg: " + str(err) + "\n"
+            else:  # show type (of error) and error message
+                err_type = str(type(err)).split("'")[1]
+                msg += f"  {err_type}: {str(err)}\n"
+        log.info(msg)
+
+    if num_tries == 1:
+        log.info("Happily, RestingfMRI_Denoise worked on the first try.")
+    else:
+        msg = (
+            "first try but it did on the second"
+            if return_code == 0
+            else "first or second try"
+        )
+        log.info("Sadly, RestingfMRI_Denoise did not work on the %s.", msg)
+
+    log.info("%s Gear is done.  Returning %s", CONTAINER, return_code)
     return return_code
 
 if __name__ == "__main__":
