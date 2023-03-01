@@ -15,7 +15,7 @@ from flywheel_gear_toolkit.interfaces.command_line import (
     exec_command,
 )
 from flywheel_gear_toolkit.utils.zip_tools import unzip_archive, zip_output
-
+from utils.fly.environment import get_and_log_environment
 from utils.bids.download_run_level import download_bids_for_runlevel, walklevel
 from utils.bids.run_level import get_analysis_run_level_and_hierarchy
 from utils.singularity import run_in_tmp_dir
@@ -112,7 +112,8 @@ def main(gtk_context):
     # Any errors will prevent the command from running and will cause exit(1)
     errors = []
     warnings = []
-
+    environ = get_and_log_environment()
+    
     # Get output directory and put it into log
     output_dir = gtk_context.output_dir
     log.info("output_dir is %s", output_dir)
@@ -198,6 +199,7 @@ def main(gtk_context):
     # this is all about it    
     exec_command(
                 command,
+                environ=environ,
                 shell=True
             )
     # zip entire output/<analysis_id> folder into <gear_name>_<analysis.id>.zip
