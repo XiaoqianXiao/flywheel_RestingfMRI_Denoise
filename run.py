@@ -157,7 +157,7 @@ def main(gtk_context):
     )
 
     # Download fmriprep results as the input of the gear
-    fmriprep_dir = os.path.join(work_dir, "fmriprep")
+    fmriprep_dir = os.path.join(work_dir, "derivatives/fmriprep")
     zipFile_dir = os.path.join(fmriprep_dir, 'zip_files')
     isExist = os.path.exists(zipFile_dir)
     if not isExist:
