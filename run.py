@@ -197,7 +197,8 @@ def main(gtk_context):
         print(errors)
     # this is all about it    
     exec_command(
-                command
+                command,
+                shell=True
             )
     # zip entire output/<analysis_id> folder into <gear_name>_<analysis.id>.zip
     zip_file_name = gear_name + f"_{destination_id}.zip"
