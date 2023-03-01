@@ -157,13 +157,13 @@ def main(gtk_context):
     )
 
     # Download fmriprep results as the input of the gear
-    fmripep_dir = os.path.join(work_dir, "fmripep")
-    zipFile_dir = os.path.join(fmripep_dir, 'zip_files')
+    fmriprep_dir = os.path.join(work_dir, "fmriprep")
+    zipFile_dir = os.path.join(fmriprep_dir, 'zip_files')
     isExist = os.path.exists(zipFile_dir)
     if not isExist:
        os.makedirs(zipFile_dir)
     
-    unzipFile_dir = os.path.join(fmripep_dir, 'unzipped_files') 
+    unzipFile_dir = os.path.join(fmriprep_dir, 'unzipped_files') 
     isExist = os.path.exists(unzipFile_dir)
     if not isExist:
        os.makedirs(unzipFile_dir)
@@ -190,9 +190,9 @@ def main(gtk_context):
             if ('fmriprep' in root.split('/') and 'sub' in re.split('/|-',root)):
                 for filename in os.listdir(root):
                     if 'ses' in filename.split('-'):
-                        shutil.move(os.path.join(root,filename), os.path.join(fmripep_dir,re.split('/',root)[-1],filename))
+                        shutil.move(os.path.join(root,filename), os.path.join(fmriprep_dir,re.split('/',root)[-1],filename))
         if os.path.isfile(os.path.join(root,'dataset_description.json')):
-            shutil.move(os.path.join(root,'dataset_description.json'), fmripep_dir)
+            shutil.move(os.path.join(root,'dataset_description.json'), fmriprep_dir)
     else:
         log.info("Did not download fmriprep because of previous errors")
         print(errors)
