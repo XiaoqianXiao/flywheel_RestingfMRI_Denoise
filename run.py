@@ -124,6 +124,7 @@ def main(gtk_context):
     gear_name = gtk_context.manifest["name"]
     # run-time configuration options from the gear's context.json
     config = gtk_context.config
+    dry_run = config.get("gear-dry-run")
     
     import json
     data = {}
@@ -192,7 +193,10 @@ def main(gtk_context):
                     if 'ses' in filename.split('-'):
                         shutil.move(os.path.join(root,filename), os.path.join(fmriprep_dir,re.split('/',root)[-1],filename))
         if os.path.isfile(os.path.join(root,'dataset_description.json')):
+            if not os.path.isfile(os.path.join(work_dir,'dataset_description.json')):
+                shutil.copyfile(os.path.join(root,'dataset_description.json'), work_dir)
             shutil.move(os.path.join(root,'dataset_description.json'), fmriprep_dir)
+ 
     else:
         log.info("Did not download fmriprep because of previous errors")
         print(errors)
@@ -205,13 +209,14 @@ def main(gtk_context):
             num_tries += 1
             if num_tries > 1:
                 log.info("Trying a second time")          
-                # this is all about it    
-                exec_command(
-                            command,
-                            environ=environ,
-                            shell=True
-                        )
-                break
+                # this is all about it         
+            exec_command(
+                        command,
+                        environ=environ,
+                        dry_run=dry_run,
+                        shell=True
+                    )
+            break
         except RuntimeError as exc:
             if num_tries == 2:
                 return_code = 1
