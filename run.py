@@ -216,8 +216,8 @@ def main(gtk_context):
                 log.info("Trying a second time")          
                 # this is all about it         
             os.system(
-                        " ".join(command)
-                    )
+                    " ".join(command)
+                )
             break
         except RuntimeError as exc:
             if num_tries == 2:
