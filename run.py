@@ -115,7 +115,7 @@ def main(gtk_context):
     # Any errors will prevent the command from running and will cause exit(1)
     errors = []
     warnings = []
-    #environ = get_and_log_environment()
+    environ = get_and_log_environment()
     
     # Get output directory and put it into log
     output_dir = gtk_context.output_dir
@@ -215,10 +215,14 @@ def main(gtk_context):
             if num_tries > 1:
                 log.info("Trying a second time")          
             # this is all about it         
-            os.system(
-                    " ".join(command)
+            exec_command(
+                    command,
+                    environ=environ,
+                    dry_run=dry_run,
+                    shell=True,
+                    cont_output=True,
                 )
-            break
+                break
         except RuntimeError as exc:
             if num_tries == 2:
                 return_code = 1
