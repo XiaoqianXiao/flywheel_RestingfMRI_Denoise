@@ -29,5 +29,4 @@ COPY run.py ${FLYWHEEL}/run.py
 
 # Configure entrypoint
 RUN chmod a+x ${FLYWHEEL}/run.py
-#ENTRYPOINT ["/flywheel/v0/run.py"]
 ENTRYPOINT ["/flywheel/v0/run.py"]
