@@ -205,7 +205,9 @@ def main(gtk_context):
         print(errors)
         
     num_tries = 0
+    return_code = 0
     if len(errors) > 0:
+        return_code = 1
         num_tries == 2  # don't try to run
     while num_tries < 2:
         try:
@@ -214,7 +216,7 @@ def main(gtk_context):
                 log.info("Trying a second time")          
                 # this is all about it         
             os.system(
-                        command
+                        " ".join(command)
                     )
             break
         except RuntimeError as exc:
