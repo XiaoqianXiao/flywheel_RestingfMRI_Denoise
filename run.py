@@ -216,7 +216,7 @@ def main(gtk_context):
             exec_command(
                         command,
                         dry_run=dry_run,
-                        shell=True
+                        shell=True,
                     )
             break
         except RuntimeError as exc:
