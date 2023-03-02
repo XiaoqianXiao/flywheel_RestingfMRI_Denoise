@@ -214,7 +214,7 @@ def main(gtk_context):
             num_tries += 1
             if num_tries > 1:
                 log.info("Trying a second time")          
-                # this is all about it         
+            # this is all about it         
             os.system(
                     " ".join(command)
                 )
