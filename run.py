@@ -250,16 +250,16 @@ def main(gtk_context):
     else:
         log.info("Output directory does not exist so it cannot be removed")
         
-     if len(errors) > 0:
-        msg = "Previous errors:\n"
-        for err in errors:
-            if str(type(err)).split("'")[1] == "str":
-                # show string
-                msg += "  Error msg: " + str(err) + "\n"
-            else:  # show type (of error) and error message
-                err_type = str(type(err)).split("'")[1]
-                msg += f"  {err_type}: {str(err)}\n"
-        log.info(msg)
+    if len(errors) > 0:
+    msg = "Previous errors:\n"
+    for err in errors:
+        if str(type(err)).split("'")[1] == "str":
+            # show string
+            msg += "  Error msg: " + str(err) + "\n"
+        else:  # show type (of error) and error message
+            err_type = str(type(err)).split("'")[1]
+            msg += f"  {err_type}: {str(err)}\n"
+    log.info(msg)
 
     if num_tries == 1:
         log.info("Happily, RestingfMRI_Denoise worked on the first try.")
