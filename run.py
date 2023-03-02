@@ -213,10 +213,8 @@ def main(gtk_context):
             if num_tries > 1:
                 log.info("Trying a second time")          
                 # this is all about it         
-            exec_command(
-                        command,
-                        dry_run=dry_run,
-                        shell=True,
+            os.system(
+                        command
                     )
             break
         except RuntimeError as exc:
