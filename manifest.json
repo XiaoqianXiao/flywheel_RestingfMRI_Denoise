@@ -28,6 +28,11 @@
             "description": "descrip this pipline",
             "type": "string"
         },
+        "gear-dry-run": {
+            "default": false,
+            "description": "Do everything except actually executing the command line",
+            "type": "boolean"
+        },
         "wm": {
             "default": false,
             "description": "add white matter or not",
