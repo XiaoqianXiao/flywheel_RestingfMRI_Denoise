@@ -66,11 +66,13 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
             pipeline_json_dict['name'] = config['name']
             pipeline_json_dict['description'] = config['description']
             for k in ["wm", "csf", "gs", "motion"]:
+                pipeline_json_dict["confounds"] = {}
                 key_temp_deriv = k + '-temp_deriv'
                 key_quad_terms = k + '-quad_terms'
                 if config[k] == "fasle":
                     pipeline_json_dict["confounds"][k] = "False"
                 else:
+                    pipeline_json_dict["confounds"][k] = {}
                     pipeline_json_dict["confounds"][k]["temp_deriv"] = config[key_temp_deriv]
                     pipeline_json_dict["confounds"][k]["quad_terms"] = config[key_quad_terms]
             pipeline_json_dict["confounds"]["acompcor"] = config["acompcor"]
