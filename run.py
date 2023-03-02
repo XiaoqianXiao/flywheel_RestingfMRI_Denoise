@@ -222,7 +222,7 @@ def main(gtk_context):
                     shell=True,
                     cont_output=True,
                 )
-                break
+            break
         except RuntimeError as exc:
             if num_tries == 2:
                 return_code = 1
