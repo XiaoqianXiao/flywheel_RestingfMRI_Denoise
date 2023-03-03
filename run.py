@@ -115,7 +115,7 @@ def main(gtk_context):
     # Any errors will prevent the command from running and will cause exit(1)
     errors = []
     warnings = []
-    environ = get_and_log_environment()
+    #environ = get_and_log_environment()
     
     # Get output directory and put it into log
     output_dir = gtk_context.output_dir
@@ -217,7 +217,7 @@ def main(gtk_context):
             # this is all about it         
             exec_command(
                     command,
-                    environ=environ,
+                    #environ=environ,
                     dry_run=dry_run,
                     shell=True,
                     cont_output=True,
