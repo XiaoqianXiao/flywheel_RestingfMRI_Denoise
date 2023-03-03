@@ -105,14 +105,19 @@
             "image": "xiaoqianxiao/fw_restingfmri_denoise:0.1.0"
         }
     },
-    "description": "",
+    "description": "",    
     "environment": {       
-        "FLYWHEEL": "/flywheel/v0",
-        "PYTHONUNBUFFERED": "1",
-        "PWD": "/flywheel/v0",
-        "CONDA_EXE": "/opt/conda/bin/conda",
-        "CPATH": "/usr/local/miniconda/include/:",
-        "PATH": "/opt/conda/bin:/opt/conda/condabin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        "LD_LIBRARY_PATH": "/usr/lib/x86_64-linux-gnu:/opt/conda/lib:", 
+        "HOME": "/home/RestingfMRI_Denoise", 
+        "PYTHONNOUSERSITE": "1", 
+        "FLYWHEEL": "/flywheel/v0", 
+        "PATH": "/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", 
+        "LANG": "C.UTF-8", 
+        "DEBIAN_FRONTEND": "noninteractive", 
+        "IS_DOCKER_8395080871": "1", 
+        "LC_ALL": "C.UTF-8", 
+        "PWD": "/flywheel/v0", 
+        "CPATH": "/opt/conda/include:"
     },
     "label": "restingfmri-denoise",
     "license": "Other",
