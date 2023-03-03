@@ -116,6 +116,7 @@ def main(gtk_context):
     errors = []
     warnings = []
     #environ = get_and_log_environment()
+    environ = gtk_context.manifest['environment']
     
     # Get output directory and put it into log
     output_dir = gtk_context.output_dir
@@ -217,7 +218,7 @@ def main(gtk_context):
             # this is all about it         
             exec_command(
                     command,
-                    #environ=environ,
+                    environ=environ,
                     dry_run=dry_run,
                     shell=True,
                     cont_output=True,
