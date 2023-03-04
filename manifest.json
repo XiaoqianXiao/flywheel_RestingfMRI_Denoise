@@ -29,7 +29,7 @@
             "type": "string"
         },
         "gear-dry-run": {
-            "default": false,
+            "default": true,
             "description": "Do everything except actually executing the command line",
             "type": "boolean"
         },
