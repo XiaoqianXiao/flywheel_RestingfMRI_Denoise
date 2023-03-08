@@ -105,7 +105,7 @@
             "image": "xiaoqianxiao/fw_restingfmri_denoise:0.1.0"
         }
     },
-    "description": "",    
+    "description": "RestingfMRI_Denoising is a python based tool using fmriprep output to denoise resting state fMRI data",    
     "environment": {       
         "LD_LIBRARY_PATH": "/usr/lib/x86_64-linux-gnu:/opt/conda/lib:", 
         "HOME": "/home/RestingfMRI_Denoise", 
