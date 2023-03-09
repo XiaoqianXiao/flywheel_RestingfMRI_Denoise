@@ -53,10 +53,15 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
     skip_pattern = re.compile("gear-|lsf-|singularity-")
     command_parameters = {}
     ##
-    pipelines_file_path = gtk_context.get_input_path("pipelines")
+    pipelines_file
+    pipelines_path
+    pipelines_file_path = gtk_context.get_input_path("pipelines_file")
     if pipelines_file_path is not None:
-        paths = list(Path("input/pipelines").glob("*"))
+        paths = list(Path("input/pipelines_file").glob("*"))
         command_parameters['pipelines'] = paths[0]
+    pipelines_file_name = gtk_context.get_input_path("pipelines_name")
+    if pipelines_file_name is not None:
+        command_parameters['pipelines'] = pipelines_file_name
     log_to_file = False
     config_keys = config.keys()
     if 'use_custom_pipline' in config_keys:
