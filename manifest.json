@@ -13,6 +13,11 @@
         }
     },
     "config": {
+        "pipelines_name": {
+            "default": "pipeline-Null",
+            "description": "Pipeline name used for denoising from package",
+            "type": "string"
+        },    
         "use_custom_pipline": {
             "default": false,
             "description": "check if you want to custom the denoise pipeline here",
