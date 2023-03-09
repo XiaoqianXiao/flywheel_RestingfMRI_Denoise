@@ -38,6 +38,21 @@
             "description": "Do everything except actually executing the command line",
             "type": "boolean"
         },
+        "motion": {
+            "default": false,
+            "description": "add motion or not",
+            "type": "boolean"
+        },
+        "motion-temp_deriv": {
+            "default": false,
+            "description": "add motion temp_deriv or not",
+            "type": "boolean"
+        },
+        "motion-quad_terms": {
+            "default": false,
+            "description": "add motion quad_terms or not",
+            "type": "boolean"
+        },
         "wm": {
             "default": false,
             "description": "add white matter or not",
@@ -129,6 +144,6 @@
     "maintainer": "Xiaoqian <xiaoqian@stanford.edu>",
     "name": "restingfmri-denoise",
     "source": "https://github.com/XiaoXiaoqian/RestingfMRI_Denoise.git",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "url": "https://github.com/XiaoXiaoqian/flywheel_RestingfMRI_Denoise/blob/main/README.md"
 }
