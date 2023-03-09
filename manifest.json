@@ -108,6 +108,11 @@
             "description": "add aroma or not",
             "type": "boolean"
         },
+        "spikes": {
+            "default": false,
+            "description": "add spikes or not",
+            "type": "boolean"
+        },
         "fd_th": {
             "default": 0.5,
             "description": "framewise_displacement threshold, numeric which scans have fd greater thant it will be identified as outliers.",
