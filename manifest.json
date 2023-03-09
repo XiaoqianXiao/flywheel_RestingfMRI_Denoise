@@ -7,11 +7,6 @@
             "base": "file",
             "optional": true
         },
-        "pipelines_name": {
-            "description": "Name of pipelines from package used for denoising",
-            "base": "string",
-            "optional": true
-        },
       "api-key": {
           "base": "api-key",
           "read-only": true
