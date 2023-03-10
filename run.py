@@ -61,7 +61,7 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
     config_keys = config.keys()
     pipelines_name = config['pipelines_name']
     if pipelines_name != "pipeline-Null":
-        command_parameters['pipelines'] = pipelines_file_name
+        command_parameters['pipelines'] = pipelines_name
     if 'use_custom_pipline' in config_keys:
         if config['use_custom_pipline'] == True:
             use_custom_pipline = config['use_custom_pipline']
