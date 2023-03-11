@@ -20,7 +20,7 @@ def download_bids_for_runlevel(
     #run_level is in ["project", "subject", "session", "acquisition"]
     file_of_interest = 'fmriprep'
     fmriprep_dir = os.path.join(work_dir, "derivatives/fmriprep")
-    zipFile_dir = os.path.join(fmriprep_dir, 'zip_files')
+    zipFile_dir = os.path.join(work_dir, 'zip_files')
     if run_level == 'project':
         sessions = project.sessions()
         for s in sessions:   
