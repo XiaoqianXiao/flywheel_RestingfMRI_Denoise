@@ -200,10 +200,10 @@ def main(gtk_context):
                 for filename in os.listdir(root):
                     if 'ses' in filename.split('-'):
                         shutil.move(os.path.join(root,filename), os.path.join(fmriprep_dir,re.split('/',root)[-1],filename))
-        if os.path.isfile(os.path.join(root,'dataset_description.json')):
+        if os.path.isfile(os.path.join(root,'fmriprep/dataset_description.json')):
             if not os.path.isfile(os.path.join(work_dir,'dataset_description.json')):
-                shutil.copyfile(os.path.join(root,'dataset_description.json'), work_dir)
-            shutil.move(os.path.join(root,'dataset_description.json'), fmriprep_dir)
+                shutil.copyfile(os.path.join(root,'fmriprep/dataset_description.json'), work_dir)
+            shutil.move(os.path.join(root,'fmriprep/dataset_description.json'), fmriprep_dir)
  
     else:
         log.info("Did not download fmriprep because of previous errors")
