@@ -18,7 +18,7 @@ def download_bids_for_runlevel(
     project_finder = 'group=' + group_label + ',label=' + project_label
     project = client.projects.find_one(project_finder)
     #run_level is in ["project", "subject", "session", "acquisition"]
-    file_of_interest = 'bids-fmriprep'
+    file_of_interest = 'fmriprep'
     fmriprep_dir = os.path.join(work_dir, "derivatives/fmriprep")
     zipFile_dir = os.path.join(fmriprep_dir, 'zip_files')
     if run_level == 'project':
@@ -31,7 +31,7 @@ def download_bids_for_runlevel(
             session_name = s.label
             for a in analyses:
                 if a.gear_info:
-                    if (a.gear_info.name == file_of_interest and a.files):
+                    if (file_of_interest in a.gear_info.name and a.files):
                         analysisID =  a._id
                         prep_list.append(a._id)
                         createdTime_list.append(a.created.strftime("%Y-%m-%d"))
@@ -55,7 +55,7 @@ def download_bids_for_runlevel(
         createdTime_list = []
         for a in analyses:
             if a.gear_info:
-                if (a.gear_info.name == file_of_interest and a.files):
+                if (file_of_interest in a.gear_info.name and a.files):
                     analysisID =  a._id
                     prep_list.append(a._id)
                     createdTime_list.append(a.created.strftime("%Y-%m-%d"))
