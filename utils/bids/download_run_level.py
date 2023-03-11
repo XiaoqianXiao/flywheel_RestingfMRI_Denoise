@@ -42,7 +42,7 @@ def download_bids_for_runlevel(
                 print('start download sub-' + sub_name + '_session-' + session_name)
                 analysis = client.get(analysisID)
                 for f in analysis.files:
-                    if f.name.startswith(file_of_interest):
+                    if file_of_interest in f.name:
                         output_file_name = os.path.join(zipFile_dir,f.name)
                         if not os.path.exists(output_file_name):
                                f.download(output_file_name)
@@ -65,7 +65,7 @@ def download_bids_for_runlevel(
             if prep_list:
                 analysis = client.get(analysisID)
                 for f in analysis.files:
-                    if f.name.startswith(file_of_interest):
+                    if file_of_interest in f.name:
                         output_file_name = os.path.join(zipFile_dir,f.name)
                         if not os.path.exists(output_file_name):
                                f.download(output_file_name)
