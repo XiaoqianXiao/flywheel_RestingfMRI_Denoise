@@ -18,7 +18,9 @@ def download_bids_for_runlevel(
     project_finder = 'group=' + group_label + ',label=' + project_label
     project = client.projects.find_one(project_finder)
     #run_level is in ["project", "subject", "session", "acquisition"]
-    file_of_interest = 'fmriprep_'
+    file_of_interest = 'bids-fmriprep'
+    fmriprep_dir = os.path.join(work_dir, "derivatives/fmriprep")
+    zipFile_dir = os.path.join(fmriprep_dir, 'zip_files')
     if run_level == 'project':
         sessions = project.sessions()
         for s in sessions:   
@@ -41,7 +43,7 @@ def download_bids_for_runlevel(
                 analysis = client.get(analysisID)
                 for f in analysis.files:
                     if f.name.startswith(file_of_interest):
-                        output_file_name = os.path.join(work_dir,'fmriprep/zip_files',f.name)
+                        output_file_name = os.path.join(zipFile_dir,f.name)
                         if not os.path.exists(output_file_name):
                                f.download(output_file_name)
     else:
@@ -64,7 +66,7 @@ def download_bids_for_runlevel(
                 analysis = client.get(analysisID)
                 for f in analysis.files:
                     if f.name.startswith(file_of_interest):
-                        output_file_name = os.path.join(work_dir,'fmriprep/zip_files',f.name)
+                        output_file_name = os.path.join(zipFile_dir,f.name)
                         if not os.path.exists(output_file_name):
                                f.download(output_file_name)
                             
