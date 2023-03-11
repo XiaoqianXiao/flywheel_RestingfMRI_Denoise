@@ -60,15 +60,15 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
     log_to_file = False
     config_keys = config.keys()
     pipelines_name = config['pipelines_name']
-    if pipelines_name != "pipeline-Null":
+    if pipelines_name != "Not choosing the package set pipelines":
         command_parameters['pipelines'] = pipelines_name
     if 'use_custom_pipline' in config_keys:
         if config['use_custom_pipline'] == True:
             use_custom_pipline = config['use_custom_pipline']
             pipeline_json_dict = {}
             if use_custom_pipline is not None:
-                pipeline_json_dict['name'] = config['name']
-                pipeline_json_dict['description'] = config['description']
+                pipeline_json_dict['name'] = "costumized pipeline"
+                pipeline_json_dict['description'] = "pipeline user set in configure"
                 for k in ["wm", "csf", "gs", "motion"]:
                     pipeline_json_dict["confounds"] = {}
                     key_temp_deriv = k + '-temp_deriv'
