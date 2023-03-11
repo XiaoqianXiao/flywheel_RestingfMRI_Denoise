@@ -139,6 +139,6 @@
     "maintainer": "Xiaoqian <xiaoqian@stanford.edu>",
     "name": "restingfmri-denoise",
     "source": "https://github.com/XiaoXiaoqian/RestingfMRI_Denoise.git",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "url": "https://github.com/XiaoXiaoqian/flywheel_RestingfMRI_Denoise/blob/main/README.md"
 }
