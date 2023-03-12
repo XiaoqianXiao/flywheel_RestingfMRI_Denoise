@@ -1,4 +1,4 @@
-FROM xiaoqianxiao/restingfmri_denoise:0.1.1
+FROM xiaoqianxiao/restingfmri_denoise:0.1.2
 
 LABEL maintainer="xiaoqian@stanford.edu"
 
