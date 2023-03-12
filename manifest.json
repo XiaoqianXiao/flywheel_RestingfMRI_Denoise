@@ -117,7 +117,7 @@
     "custom": {
         "gear-builder": {
             "category": "analysis",
-            "image": "xiaoqianxiao/fw_restingfmri_denoise:0.1.0"
+            "image": "xiaoqianxiao/fw_restingfmri_denoise:0.1.15"
         }
     },
     "description": "RestingfMRI_Denoising is a python based tool using fmriprep output to denoise resting state fMRI data",    
@@ -139,6 +139,6 @@
     "maintainer": "Xiaoqian <xiaoqian@stanford.edu>",
     "name": "restingfmri-denoise",
     "source": "https://github.com/XiaoXiaoqian/RestingfMRI_Denoise.git",
-    "version": "0.1.14",
+    "version": "0.1.15",
     "url": "https://github.com/XiaoXiaoqian/flywheel_RestingfMRI_Denoise/blob/main/README.md"
 }
