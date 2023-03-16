@@ -13,6 +13,11 @@
         }
     },
     "config": {
+        "subjects": {
+            "default": "",
+            "description": "Subject's ID for subjects you want to included in the analysis",
+            "type": "string"
+        },  
         "pipelines_name": {
             "default": "Not choosing the package set pipelines",
             "description": "Pipeline name used for denoising from package",
