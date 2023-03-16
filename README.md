@@ -15,6 +15,8 @@ This will allow the gear to use the flywheel SDK using your api key, giving the 
 Please refer the [flywheel document](https://flywheel-io.gitlab.io/product/backend/sdk/branches/master/python/getting_started.html#api-key) for more info about the api-key.
 <br />
 ## Config:
+Please note that in flywheel config iteams are in alphabet sequence please check the info below to find the logic of using them.
+<br />
 Two thing you can help to set in the Config session: 1)set some parameters for the tool, and 2)costomize your own denoise stratege. Please see more details below:
 ### set parameters for the tool
 >### subjects
