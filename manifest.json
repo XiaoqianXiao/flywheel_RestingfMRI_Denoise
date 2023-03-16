@@ -14,7 +14,7 @@
     },
     "config": {
         "subjects": {
-            "default": "",
+            "default": "Not choose",
             "description": "Subject's ID for subjects you want to included in the analysis",
             "type": "string"
         },  
@@ -144,6 +144,6 @@
     "maintainer": "Xiaoqian <xiaoqian@stanford.edu>",
     "name": "restingfmri-denoise",
     "source": "https://github.com/XiaoXiaoqian/RestingfMRI_Denoise.git",
-    "version": "0.1.18",
+    "version": "0.1.19",
     "url": "https://github.com/XiaoXiaoqian/flywheel_RestingfMRI_Denoise/blob/main/README.md"
 }
