@@ -62,6 +62,9 @@ def generate_command(gtk_context, config, work_dir, output_analysis_id_dir, erro
     pipelines_name = config['pipelines_name']
     if pipelines_name != "Not choosing the package set pipelines":
         command_parameters['pipelines'] = pipelines_name
+    subjects_IDs = config['subjects']
+    if subjects_IDs != "Not choose":
+        command_parameters['subjects'] = subjects_IDs    
     if 'use_custom_pipline' in config_keys:
         if config['use_custom_pipline'] == True:
             use_custom_pipline = config['use_custom_pipline']
