@@ -247,9 +247,11 @@ def main(gtk_context):
             os.system("df -h")
              
     # zip entire output/<analysis_id> folder into <gear_name>_<analysis.id>.zip
+    result_dir = os.path.join(bids_dir, 'derivatives', 'denoise')
+    
     zip_file_name = gear_name + f"_{destination_id}.zip"
     zip_output(
-        str(output_dir),
+        str(result_dir),
         destination_id,
         zip_file_name,
         dry_run=False,
