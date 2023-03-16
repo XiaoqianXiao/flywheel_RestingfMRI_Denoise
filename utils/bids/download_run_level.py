@@ -32,13 +32,13 @@ def download_bids_for_runlevel(
         sessions = project.sessions()
         for s in sessions:
             sub_name = s.subject.label
-            s_id = re.split('-', sub_name)[1]
+            #s_id = re.split('-', sub_name)[1]
             prep_list = []
             createdTime_list = []
             analyses = s.reload()['analyses']
             session_name = s.label
             subjects_of_interest = re.split(' ', subjects_IDs)
-            if (subjects_IDs == "Not choose") or (s_id in subjects_of_interest):
+            if (subjects_IDs == "Not choose") or (sub_name in subjects_of_interest):
                 for a in analyses:
                     if a.gear_info:
                         if (file_of_interest in a.gear_info.name and a.files):
