@@ -209,7 +209,8 @@ def main(gtk_context):
             if os.path.isfile(os.path.join(root,'fmriprep/dataset_description.json')):
                 if not os.path.isfile(os.path.join(work_dir,'dataset_description.json')):
                     shutil.copyfile(os.path.join(root,'fmriprep/dataset_description.json'), os.path.join(work_dir,'dataset_description.json'))
-                shutil.move(os.path.join(root,'fmriprep/dataset_description.json'), fmriprep_dir)
+                if not os.path.isfile(os.path.join(fmriprep_dir,'dataset_description.json')):
+                    shutil.move(os.path.join(root,'fmriprep/dataset_description.json'), fmriprep_dir)
  
     else:
         log.info("Did not download fmriprep because of previous errors")
