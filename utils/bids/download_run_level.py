@@ -21,31 +21,41 @@ def download_bids_for_runlevel(
     file_of_interest = 'fmriprep'
     fmriprep_dir = os.path.join(work_dir, "derivatives/fmriprep")
     zipFile_dir = os.path.join(work_dir, 'zip_files')
+    config = gtk_context.config
+    subjects_IDs = config['subjects']
+    if subjects_IDs != "Not choose":
+        subjects_of_interest = re.split(' ', subjects_IDs)
+        
+    #    command_parameters['subjects'] = subjects_IDs  
     if run_level == 'project':
         sessions = project.sessions()
-        for s in sessions:   
+        for s in sessions:
             sub_name = s.subject.label
+            s_id = re.split('-', sub_name)[1]
             prep_list = []
             createdTime_list = []
             analyses = s.reload()['analyses']
             session_name = s.label
-            for a in analyses:
-                if a.gear_info:
-                    if (file_of_interest in a.gear_info.name and a.files):
-                        analysisID =  a._id
-                        prep_list.append(a._id)
-                        createdTime_list.append(a.created.strftime("%Y-%m-%d"))
-            if len(prep_list) > 1:
-                latest_index = createdTime_list.index(max(createdTime_list))
-                analysisID = prep_list[latest_index]
-            if prep_list:
-                print('start download sub-' + sub_name + '_session-' + session_name)
-                analysis = client.get(analysisID)
-                for f in analysis.files:
-                    if file_of_interest in f.name:
-                        output_file_name = os.path.join(zipFile_dir,f.name)
-                        if not os.path.exists(output_file_name):
-                               f.download(output_file_name)
+            subjects_of_interest = re.split(' ', subjects_IDs)
+            if (subjects_IDs == "Not choose") or (s_id in subjects_of_interest):
+                for a in analyses:
+                    if a.gear_info:
+                        if (file_of_interest in a.gear_info.name and a.files):
+                            analysisID =  a._id
+                            prep_list.append(a._id)
+                            createdTime_list.append(a.created.strftime("%Y-%m-%d"))
+                if len(prep_list) > 1:
+                    latest_index = createdTime_list.index(max(createdTime_list))
+                    analysisID = prep_list[latest_index]
+                if prep_list:
+                    print('start download sub-' + sub_name + '_session-' + session_name)
+                    analysis = client.get(analysisID)
+                    for f in analysis.files:
+                        if file_of_interest in f.name:
+                            output_file_name = os.path.join(zipFile_dir,f.name)
+                            if not os.path.exists(output_file_name):
+                                   f.download(output_file_name)
+                                   
     else:
         destination = client.get(destination_id)
         container = client.get(destination.parents[run_level])
