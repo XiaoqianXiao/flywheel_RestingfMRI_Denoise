@@ -53,19 +53,13 @@ add acompcor or not
 >### aroma
 add aroma or not
 >### spikes
-add spikes or not; if yes you can choice either use
+add spikes or not; if yes you can choice either use:
 >#### fd_th
 framewise_displacement threshold, numeric which scans have fd greater thant it will be identified as outliers
 <br />
 or 
 >#### dvars_th
 std_dvars threshold, numeric which scans have std_dvars greater thant it will be identified as outliers.
-
-"gear-dry-run": {
-    "default": true,
-    "description": "Do everything except actually executing the command line",
-    "type": "boolean"
-},
 
 
   
