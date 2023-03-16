@@ -1,4 +1,5 @@
 import os
+import re
 def download_bids_for_runlevel(
     client,
     destination_id,
