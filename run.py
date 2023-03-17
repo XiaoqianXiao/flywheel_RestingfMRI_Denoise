@@ -256,7 +256,7 @@ def main(gtk_context):
     for root, dirs, files in os.walk(result_dir): 
         for file in files:
             path_file = os.path.join(root,file)
-            shutil.copy2(path_file, output_dir) 
+            shutil.copy2(path_file, output_analysis_id_dir) 
     zip_file_name = gear_name + f"_{destination_id}.zip"
     zip_output(
         str(output_dir),
