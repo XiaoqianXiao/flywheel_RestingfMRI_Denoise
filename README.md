@@ -5,6 +5,16 @@ The RestingfMRI_Denoise using fMRIprep outputs as input. Before running Restingf
 ## Running:
 To run the gear, select a project, subject or session.
 Note it can run for 12 to 48 or more hours.
+## Example of runing it:
+1. Project(-> Brains)
+2. Analyses(-> Run Analysis Gear)
+3. Select an Analysis Gear (-> restingfmri-denoise, 0.2.0)
+4. Configuration:
+   gear-dry-run: uncheck
+   pipelines_name: pipeline-6HMP_2Phys pipeline-6HMP_2Phys_spikes-FD5
+   subjects: 54909s027 54909s028
+6. Run Gear
+
 ## Inputs:
 >### pipelines: 
 Name of pipelines used for denoising, can be both paths of json files with pipeline or file with name of pipelines from package.
