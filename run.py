@@ -248,10 +248,18 @@ def main(gtk_context):
              
     # zip entire output/<analysis_id> folder into <gear_name>_<analysis.id>.zip
     result_dir = os.path.join(work_dir, 'derivatives/denoise')
+    if not Path(result_dir).exists():
+        Path(result_dir).mkdir()
+    with open(os.path.join(result_dir, 'readme.txt'), 'w') as f:
+        f.write('Create a new text file!')
     
+    for root, dirs, files in os.walk(result_dir): 
+        for file in files:
+            path_file = os.path.join(root,file)
+            shutil.copy2(path_file, output_dir) 
     zip_file_name = gear_name + f"_{destination_id}.zip"
     zip_output(
-        str(result_dir),
+        str(output_dir),
         destination_id,
         zip_file_name,
         dry_run=False,
