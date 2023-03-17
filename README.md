@@ -10,9 +10,13 @@ Note it can run for 12 to 48 or more hours.
 2. Analyses(-> Run Analysis Gear)
 3. Select an Analysis Gear (-> restingfmri-denoise, 0.2.0)
 4. Configuration:
+   <br />
    gear-dry-run: uncheck
+   <br />
    pipelines_name: pipeline-6HMP_2Phys pipeline-6HMP_2Phys_spikes-FD5
+   <br />
    subjects: 54909s027 54909s028
+   <br />
 6. Run Gear
 
 ## Inputs:
