@@ -3,8 +3,9 @@ The scrips for building the gear were mostly modified from [fmriprep flywheel ge
 ## Setup:
 The RestingfMRI_Denoise using fMRIprep outputs as input. Before running RestingfMRI_Denoise, you must run fmripep first.
 ## Running:
-To run the gear, select a project, subject or session.
-Note it can run for 12 to 48 or more hours.
+The gear need to be run from the project level.<br />
+Please check below for example and details about settings.<br />
+Note it can run for 12 to 48 or more hours.<br />
 ## Example of runing it:
 1. Project(-> Brains)
 2. Analyses(-> Run Analysis Gear)
